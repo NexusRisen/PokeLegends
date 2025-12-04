@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { AnimatePresence } from 'framer-motion';
 import Preloader from '@/components/Preloader';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
-import FloatingPokemon from '@/components/FloatingPokemon';
 import DiscordCTA from '@/components/DiscordCTA';
 import Footer from '@/components/Footer';
 
@@ -12,31 +12,21 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <>
-      {/* Epic Preloader */}
-      {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+    <main className="bg-black min-h-screen">
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
 
-      {/* Main Content */}
       <div
-        className={`min-h-screen bg-slate-950 transition-opacity duration-500 ${
-          isLoading ? 'opacity-0' : 'opacity-100'
+        className={`transition-opacity duration-700 ${
+          isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
       >
-        {/* Floating Pokémon Background */}
-        <FloatingPokemon />
-
-        {/* Hero Section */}
         <Hero />
-
-        {/* Features Section */}
         <Features />
-
-        {/* Discord CTA Section */}
         <DiscordCTA />
-
-        {/* Footer */}
         <Footer />
       </div>
-    </>
+    </main>
   );
 }

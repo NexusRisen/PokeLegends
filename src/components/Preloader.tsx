@@ -34,13 +34,13 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     <AnimatePresence>
       {phase !== 'complete' && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-slate-950"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
           {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950/50 to-slate-950" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black via-red-950/30 to-black" />
 
           {/* Main content */}
           <div className="relative z-10 flex flex-col items-center">
@@ -122,7 +122,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
 
               {/* Progress bar */}
               {phase === 'loading' && (
-                <div className="mt-4 w-48 h-2 bg-slate-800 rounded-full overflow-hidden">
+                <div className="mt-4 w-48 h-2 bg-gray-800 rounded-full overflow-hidden">
                   <motion.div
                     className="h-full rounded-full"
                     style={{
@@ -133,7 +133,7 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
                 </div>
               )}
 
-              <p className="mt-3 text-slate-400 text-sm">
+              <p className="mt-3 text-gray-400 text-sm">
                 {phase === 'loading' && `${progress}%`}
                 {phase === 'catching' && 'Almost there...'}
                 {phase === 'caught' && 'Welcome to Pokémon Legends!'}
