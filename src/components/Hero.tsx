@@ -122,7 +122,7 @@ export default function Hero() {
               transition={{ duration: 3, repeat: Infinity }}
             />
             <Image
-              src="/PokeLegends/logo.jpg"
+              src="/logo.jpg"
               alt="Pokémon Legends Logo"
               fill
               className="object-contain rounded-full"

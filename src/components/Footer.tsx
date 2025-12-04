@@ -17,7 +17,7 @@ export default function Footer() {
           >
             <div className="relative w-12 h-12">
               <Image
-                src="/PokeLegends/logo.jpg"
+                src="/logo.jpg"
                 alt="Pokémon Legends"
                 fill
                 className="object-contain rounded-full"
