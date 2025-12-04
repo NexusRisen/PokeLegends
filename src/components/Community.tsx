@@ -49,16 +49,14 @@ export default function Community() {
           </p>
 
           {/* Highlights */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
             {highlights.map((item, index) => (
               <div
                 key={index}
-                className="inline-block px-5 py-3 rounded-full bg-white/5 border border-white/10"
+                className="inline-flex items-center px-4 sm:px-6 py-2.5 sm:py-3 rounded-full bg-white/5 border border-white/10"
               >
-                <div className="flex items-center space-x-2">
-                  <span className="text-xl">{item.icon}</span>
-                  <span className="text-gray-300 text-sm font-medium whitespace-nowrap">{item.label}</span>
-                </div>
+                <span className="text-lg sm:text-xl mr-2 sm:mr-3">{item.icon}</span>
+                <span className="text-gray-300 text-xs sm:text-sm font-medium whitespace-nowrap">{item.label}</span>
               </div>
             ))}
           </div>
