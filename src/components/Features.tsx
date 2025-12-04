@@ -89,19 +89,19 @@ export default function Features() {
               className="group"
             >
               <div
-                className={`h-full p-8 rounded-2xl bg-white/5 border border-white/10
+                className={`h-full p-6 sm:p-8 rounded-2xl bg-white/5 border border-white/10
                   hover:bg-white/10 hover:border-white/20 hover:-translate-y-2
                   hover:shadow-2xl ${feature.glow}
                   transition-all duration-300 cursor-pointer`}
               >
                 {/* Icon with glow effect */}
-                <div className="relative mb-6">
+                <div className="relative mb-5">
                   <div
                     className="absolute inset-0 rounded-xl blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"
                     style={{ backgroundColor: feature.color }}
                   />
                   <div
-                    className="relative w-16 h-16 rounded-xl flex items-center justify-center text-3xl
+                    className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center text-2xl sm:text-3xl
                       group-hover:scale-110 transition-transform duration-300"
                     style={{ backgroundColor: `${feature.color}20` }}
                   >
@@ -110,18 +110,18 @@ export default function Features() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300 transition-all duration-300">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                   {feature.description}
                 </p>
 
                 {/* Bottom accent line */}
                 <div
-                  className="mt-6 h-1 w-0 group-hover:w-full rounded-full transition-all duration-500"
+                  className="mt-5 h-1 w-0 group-hover:w-full rounded-full transition-all duration-500"
                   style={{ backgroundColor: feature.color }}
                 />
               </div>
