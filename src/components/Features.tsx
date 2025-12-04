@@ -47,23 +47,23 @@ export default function Features() {
   const isInView = useInView(containerRef, { once: true, margin: '-50px' });
 
   return (
-    <section id="features" className="relative py-24 px-4">
+    <section id="features" className="relative py-28 px-6">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
 
       <div className="max-w-6xl mx-auto relative z-10" ref={containerRef}>
         {/* Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center px-5 py-2.5 rounded-full bg-purple-500/20 border border-purple-500/30 mb-8">
+          <div className="inline-block px-6 py-3 rounded-full bg-purple-500/20 border border-purple-500/30 mb-10">
             <span className="text-purple-300 text-sm font-medium">Why Join Us?</span>
           </div>
 
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-8">
             Everything a <span className="text-yellow-400">Trainer</span> Needs
           </h2>
 
@@ -73,7 +73,7 @@ export default function Features() {
         </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -91,7 +91,7 @@ export default function Features() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-4">
                   {feature.title}
                 </h3>
 
