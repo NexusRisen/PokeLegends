@@ -1,0 +1,19 @@
+# Robots.txt for pokelegends.org
+# The Ultimate Pokémon Discord Community
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://pokelegends.org/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Block specific bot access to API routes (if any)
+User-agent: *
+Disallow: /api/
+
+# Welcome to Pokémon Legends!
+# Join our Discord: https://discord.gg/pokemonlegends
+# Visit us at: https://pokelegends.org

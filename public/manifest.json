@@ -1,0 +1,27 @@
+{
+  "name": "Pokémon Legends - The Ultimate Discord Community",
+  "short_name": "Pokémon Legends",
+  "description": "Join pokelegends.org - The most epic Pokémon community on Discord! Battle, trade, compete in tournaments, and become a Legend!",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#a855f7",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ],
+  "categories": ["games", "entertainment", "social"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}
