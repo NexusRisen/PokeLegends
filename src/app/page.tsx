@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Preloader from '@/components/Preloader';
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import Community from '@/components/Community';
@@ -14,7 +15,6 @@ export default function Home() {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Prevent scroll during loading
     if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -49,6 +49,9 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
+            {/* Navigation */}
+            <Navbar />
+
             {/* Background floating elements */}
             <FloatingElements />
 
