@@ -24,9 +24,9 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
     if (progress >= 100 && phase === 'loading') {
       setPhase('catching');
-      setTimeout(() => setPhase('caught'), 1000);
-      setTimeout(() => setPhase('complete'), 1800);
-      setTimeout(onComplete, 2200);
+      setTimeout(() => setPhase('caught'), 800);
+      setTimeout(() => setPhase('complete'), 1500);
+      setTimeout(onComplete, 1800);
     }
   }, [progress, phase, onComplete]);
 
@@ -34,27 +34,27 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
     <AnimatePresence>
       {phase !== 'complete' && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0a0a0f]"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
         >
           {/* Background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-red-950/30 to-black" />
+          <div className="absolute inset-0 bg-gradient-to-br from-red-950/20 via-transparent to-yellow-950/20" />
 
-          {/* Main content */}
+          {/* Content */}
           <div className="relative z-10 flex flex-col items-center">
-            {/* Pokéball */}
+            {/* Pokeball */}
             <motion.div
               className="relative w-32 h-32"
               animate={
                 phase === 'catching'
-                  ? { rotate: [-15, 15, -15, 15, 0], y: [0, -15, 0] }
+                  ? { rotate: [-15, 15, -15, 15, 0], y: [0, -20, 0] }
                   : phase === 'caught'
-                  ? { scale: [1, 1.1, 1] }
+                  ? { scale: [1, 1.2, 1] }
                   : {}
               }
-              transition={{ duration: phase === 'catching' ? 1 : 0.3 }}
+              transition={{ duration: phase === 'catching' ? 0.8 : 0.3 }}
             >
               {/* Glow */}
               <motion.div
@@ -69,37 +69,31 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
                 transition={{ duration: 2, repeat: Infinity }}
               />
 
-              {/* Pokéball SVG */}
-              <svg viewBox="0 0 100 100" className="w-full h-full">
-                {/* Top half */}
+              {/* Pokeball SVG */}
+              <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-2xl">
                 <path
                   d="M 50 5 A 45 45 0 0 1 95 50 L 5 50 A 45 45 0 0 1 50 5"
-                  fill="url(#redGradient)"
-                  stroke="#1e293b"
+                  fill="url(#redGrad)"
+                  stroke="#1a1a2e"
                   strokeWidth="3"
                 />
-                {/* Bottom half */}
                 <path
                   d="M 50 95 A 45 45 0 0 1 5 50 L 95 50 A 45 45 0 0 1 50 95"
                   fill="#f1f5f9"
-                  stroke="#1e293b"
+                  stroke="#1a1a2e"
                   strokeWidth="3"
                 />
-                {/* Center band */}
-                <rect x="5" y="46" width="90" height="8" fill="#1e293b" />
-                {/* Center button */}
-                <circle cx="50" cy="50" r="12" fill="#1e293b" />
+                <rect x="5" y="46" width="90" height="8" fill="#1a1a2e" />
+                <circle cx="50" cy="50" r="12" fill="#1a1a2e" />
                 <circle
                   cx="50"
                   cy="50"
                   r="8"
                   fill={phase === 'caught' ? '#22c55e' : '#f8fafc'}
                 />
-                {/* Shine */}
                 <ellipse cx="35" cy="30" rx="6" ry="3" fill="rgba(255,255,255,0.5)" transform="rotate(-30 35 30)" />
-
                 <defs>
-                  <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#ef4444" />
                     <stop offset="100%" stopColor="#b91c1c" />
                   </linearGradient>
@@ -108,12 +102,11 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
             </motion.div>
 
             {/* Text */}
-            <motion.div className="mt-8 text-center">
+            <div className="mt-8 text-center">
               <motion.h2
-                className="text-2xl font-bold bg-clip-text text-transparent"
-                style={{
-                  backgroundImage: 'linear-gradient(90deg, #fbbf24, #ef4444, #a855f7)',
-                }}
+                className="text-2xl font-black bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 bg-clip-text text-transparent"
+                animate={{ opacity: [0.5, 1, 0.5] }}
+                transition={{ duration: 1.5, repeat: Infinity }}
               >
                 {phase === 'loading' && 'Loading...'}
                 {phase === 'catching' && 'Catching...'}
@@ -124,21 +117,18 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
               {phase === 'loading' && (
                 <div className="mt-4 w-48 h-2 bg-gray-800 rounded-full overflow-hidden">
                   <motion.div
-                    className="h-full rounded-full"
-                    style={{
-                      background: 'linear-gradient(90deg, #ef4444, #fbbf24)',
-                      width: `${progress}%`,
-                    }}
+                    className="h-full rounded-full bg-gradient-to-r from-red-500 to-yellow-500"
+                    style={{ width: `${progress}%` }}
                   />
                 </div>
               )}
 
-              <p className="mt-3 text-gray-400 text-sm">
+              <p className="mt-3 text-gray-500 text-sm">
                 {phase === 'loading' && `${progress}%`}
                 {phase === 'catching' && 'Almost there...'}
-                {phase === 'caught' && 'Welcome to Pokémon Legends!'}
+                {phase === 'caught' && 'Welcome to Pokemon Legends!'}
               </p>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       )}

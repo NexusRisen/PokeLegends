@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Preloader from '@/components/Preloader';
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
@@ -11,16 +11,12 @@ import Footer from '@/components/Footer';
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
-  const handlePreloaderComplete = () => {
-    window.scrollTo(0, 0);
-    setIsLoading(false);
-  };
-
   useEffect(() => {
     if (isLoading) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
+      window.scrollTo(0, 0);
     }
     return () => {
       document.body.style.overflow = 'unset';
@@ -28,21 +24,23 @@ export default function Home() {
   }, [isLoading]);
 
   return (
-    <main className="bg-black min-h-screen">
+    <main className="bg-[#0a0a0f] min-h-screen">
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+        {isLoading && (
+          <Preloader onComplete={() => setIsLoading(false)} />
+        )}
       </AnimatePresence>
 
-      <div
-        className={`transition-opacity duration-700 ${
-          isLoading ? 'opacity-0 pointer-events-none' : 'opacity-100'
-        }`}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isLoading ? 0 : 1 }}
+        transition={{ duration: 0.5 }}
       >
         <Hero />
         <Features />
         <DiscordCTA />
         <Footer />
-      </div>
+      </motion.div>
     </main>
   );
 }
