@@ -17,13 +17,13 @@ export default function Community() {
   const isInView = useInView(ref, { once: true, margin: '-50px' });
 
   return (
-    <section className="relative py-28 px-6" ref={ref}>
+    <section className="relative py-20 sm:py-28 md:py-36 px-4 sm:px-6" ref={ref}>
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#5865F2]/10 to-transparent" />
 
       <div className="max-w-3xl mx-auto relative z-10">
         <motion.div
-          className="rounded-3xl bg-white/5 border border-white/10 p-10 sm:p-14 text-center"
+          className="rounded-3xl bg-white/5 border border-white/10 p-8 sm:p-12 md:p-16 text-center"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}

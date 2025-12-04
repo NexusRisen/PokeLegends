@@ -53,7 +53,7 @@ export default function Features() {
   const isInView = useInView(containerRef, { once: true, margin: '-50px' });
 
   return (
-    <section id="features" className="relative py-28 px-6">
+    <section id="features" className="relative py-20 sm:py-28 md:py-36 px-4 sm:px-6">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent" />
 
