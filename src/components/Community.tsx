@@ -20,49 +20,15 @@ export default function Community() {
     <section className="relative py-24 px-4 overflow-hidden" ref={ref}>
       {/* Animated background */}
       <div className="absolute inset-0">
-        <motion.div
+        <div
           className="absolute inset-0"
           style={{
             background: 'radial-gradient(ellipse at 50% 50%, rgba(88,101,242,0.15) 0%, transparent 60%)',
           }}
-          animate={{
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
         />
       </div>
 
-      {/* Floating Discord logos */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute text-[#5865F2] opacity-10"
-            style={{
-              left: `${15 + i * 15}%`,
-              top: `${20 + (i % 3) * 25}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              rotate: [0, 10, -10, 0],
-            }}
-            transition={{
-              duration: 5 + i,
-              repeat: Infinity,
-              delay: i * 0.5,
-              ease: 'easeInOut',
-            }}
-          >
-            <DiscordIcon className="w-16 h-16" />
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Main card */}
         <motion.div
           className="relative rounded-3xl overflow-hidden"
@@ -71,25 +37,8 @@ export default function Community() {
           transition={{ duration: 0.8 }}
         >
           {/* Card background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#5865F2]/20 via-purple-600/10 to-pink-600/10 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#5865F2]/20 via-purple-600/10 to-pink-600/10" />
           <div className="absolute inset-0 border border-white/10 rounded-3xl" />
-
-          {/* Animated border */}
-          <motion.div
-            className="absolute inset-0 rounded-3xl"
-            style={{
-              background: 'linear-gradient(90deg, transparent, rgba(88,101,242,0.5), transparent)',
-              backgroundSize: '200% 100%',
-            }}
-            animate={{
-              backgroundPosition: ['200% 0', '-200% 0'],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
 
           <div className="relative p-8 md:p-12">
             {/* Discord icon */}
@@ -99,35 +48,23 @@ export default function Community() {
               animate={isInView ? { scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.3, type: 'spring' }}
             >
-              <motion.div
-                className="relative"
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              >
+              <div className="relative">
                 <div className="absolute inset-0 bg-[#5865F2] rounded-full blur-xl opacity-50" />
-                <div className="relative w-20 h-20 rounded-full bg-gradient-to-br from-[#5865F2] to-[#7289DA] flex items-center justify-center">
+                <div className="relative w-20 h-20 rounded-full bg-[#5865F2] flex items-center justify-center">
                   <DiscordIcon className="w-10 h-10 text-white" />
                 </div>
-              </motion.div>
+              </div>
             </motion.div>
 
             {/* Title */}
             <motion.h2
-              className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-4"
+              className="text-3xl md:text-4xl lg:text-5xl font-black text-center mb-4 text-white"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-white">Join the </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5865F2] to-[#7289DA]">
-                Adventure
-              </span>
+              Join the{' '}
+              <span className="text-[#5865F2]">Adventure</span>
             </motion.h2>
 
             <motion.p
@@ -142,23 +79,19 @@ export default function Community() {
 
             {/* Highlights */}
             <motion.div
-              className="flex flex-wrap justify-center gap-4 mb-10"
+              className="flex flex-wrap justify-center gap-3 mb-10"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               {communityHighlights.map((item, index) => (
-                <motion.div
+                <span
                   key={index}
-                  className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                  transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 text-sm"
                 >
-                  <span className="text-lg">{item.icon}</span>
-                  <span className="text-gray-300 text-sm font-medium">{item.label}</span>
-                </motion.div>
+                  <span>{item.icon}</span>
+                  <span>{item.label}</span>
+                </span>
               ))}
             </motion.div>
 
@@ -167,82 +100,29 @@ export default function Community() {
               className="flex justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.9 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
             >
               <motion.a
                 href={DISCORD_INVITE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-3 px-10 py-5 rounded-2xl font-bold text-xl overflow-hidden"
+                className="inline-flex items-center gap-3 px-10 py-5 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold text-xl rounded-2xl transition-colors shadow-lg shadow-[#5865F2]/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {/* Button gradient background */}
-                <motion.div
-                  className="absolute inset-0"
-                  style={{
-                    background: 'linear-gradient(135deg, #5865F2 0%, #7289DA 50%, #5865F2 100%)',
-                    backgroundSize: '200% 200%',
-                  }}
-                  animate={{
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                  }}
-                  transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: 'linear',
-                  }}
-                />
-
-                {/* Shine effect */}
-                <motion.div
-                  className="absolute inset-0"
-                  style={{
-                    background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-                    transform: 'translateX(-100%)',
-                  }}
-                  animate={{
-                    transform: ['translateX(-100%)', 'translateX(100%)'],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    repeatDelay: 1,
-                  }}
-                />
-
-                <span className="relative flex items-center gap-3 text-white">
-                  <DiscordIcon className="w-7 h-7" />
-                  Join Pokémon Legends
-                </span>
+                <DiscordIcon className="w-7 h-7" />
+                Join Pokémon Legends
               </motion.a>
             </motion.div>
 
             {/* Bottom decoration */}
-            <motion.div
-              className="mt-8 flex justify-center gap-2"
-              initial={{ opacity: 0 }}
-              animate={isInView ? { opacity: 1 } : {}}
-              transition={{ duration: 0.6, delay: 1 }}
-            >
+            <div className="mt-8 flex justify-center gap-2">
               {['⚡', '🌟', '✨', '🌟', '⚡'].map((emoji, i) => (
-                <motion.span
-                  key={i}
-                  className="text-xl"
-                  animate={{
-                    y: [0, -5, 0],
-                    opacity: [0.5, 1, 0.5],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    delay: i * 0.2,
-                  }}
-                >
+                <span key={i} className="text-xl opacity-50">
                   {emoji}
-                </motion.span>
+                </span>
               ))}
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

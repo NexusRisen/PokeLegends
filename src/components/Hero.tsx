@@ -7,8 +7,10 @@ const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
 
 export default function Hero() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({
         x: (e.clientX / window.innerWidth - 0.5) * 20,
@@ -21,81 +23,64 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20">
       {/* Animated gradient background */}
       <div className="absolute inset-0">
-        <motion.div
+        <div
           className="absolute inset-0"
           style={{
             background: 'radial-gradient(ellipse at 30% 20%, rgba(139,92,246,0.15) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, rgba(236,72,153,0.15) 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, rgba(59,130,246,0.1) 0%, transparent 70%)',
           }}
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
         />
       </div>
 
-      {/* Floating particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full"
-            style={{
-              width: Math.random() * 6 + 2,
-              height: Math.random() * 6 + 2,
-              left: `${Math.random() * 100}%`,
-              background: ['#ef4444', '#fbbf24', '#a855f7', '#3b82f6', '#22c55e', '#ec4899'][Math.floor(Math.random() * 6)],
-              filter: 'blur(1px)',
-            }}
-            animate={{
-              y: [window.innerHeight + 100, -100],
-              x: [0, Math.random() * 100 - 50],
-              opacity: [0, 1, 1, 0],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              delay: Math.random() * 10,
-              ease: 'linear',
-            }}
-          />
-        ))}
-      </div>
+      {/* Floating particles - only render on client */}
+      {mounted && (
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full"
+              style={{
+                width: 4 + (i % 4),
+                height: 4 + (i % 4),
+                left: `${(i * 5) % 100}%`,
+                top: '100%',
+                background: ['#ef4444', '#fbbf24', '#a855f7', '#3b82f6', '#22c55e', '#ec4899'][i % 6],
+              }}
+              animate={{
+                y: [0, -1200],
+                opacity: [0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 12 + (i % 5) * 2,
+                repeat: Infinity,
+                delay: i * 0.5,
+                ease: 'linear',
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Animated rings */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        {[...Array(3)].map((_, i) => (
+        {[0, 1, 2].map((i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full border opacity-20"
+            className="absolute rounded-full border-2 opacity-20"
             style={{
               width: 400 + i * 200,
               height: 400 + i * 200,
               borderColor: ['#ef4444', '#a855f7', '#3b82f6'][i],
-              borderWidth: 2,
             }}
             animate={{
               rotate: i % 2 === 0 ? 360 : -360,
-              scale: [1, 1.1, 1],
             }}
             transition={{
-              rotate: {
-                duration: 20 + i * 10,
-                repeat: Infinity,
-                ease: 'linear',
-              },
-              scale: {
-                duration: 4,
-                repeat: Infinity,
-                ease: 'easeInOut',
-              },
+              duration: 20 + i * 10,
+              repeat: Infinity,
+              ease: 'linear',
             }}
           />
         ))}
@@ -111,16 +96,16 @@ export default function Hero() {
       />
 
       {/* Main content */}
-      <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Floating Pokeball decoration */}
         <motion.div
-          className="absolute -top-20 left-10 md:left-20 w-16 h-16 opacity-30"
+          className="absolute -top-16 left-4 md:left-10 w-12 h-12 md:w-16 md:h-16 opacity-30"
           style={{
             x: mousePosition.x * -1,
             y: mousePosition.y * -1,
           }}
           animate={{
-            y: [0, -20, 0],
+            y: [0, -15, 0],
             rotate: [0, 360],
           }}
           transition={{
@@ -132,13 +117,13 @@ export default function Hero() {
         </motion.div>
 
         <motion.div
-          className="absolute -bottom-10 right-10 md:right-20 w-20 h-20 opacity-20"
+          className="absolute -bottom-8 right-4 md:right-10 w-14 h-14 md:w-20 md:h-20 opacity-20"
           style={{
             x: mousePosition.x,
             y: mousePosition.y,
           }}
           animate={{
-            y: [0, 20, 0],
+            y: [0, 15, 0],
             rotate: [0, -360],
           }}
           transition={{
@@ -154,83 +139,34 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
+          className="mb-8"
         >
-          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-sm text-purple-300">
-            <motion.span
-              className="w-2 h-2 rounded-full bg-green-400"
-              animate={{ scale: [1, 1.2, 1], opacity: [1, 0.7, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
+          <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-sm text-purple-300">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             Community Active Now
           </span>
         </motion.div>
 
         {/* Main title */}
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-tight"
+          className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <span className="block">
-            <motion.span
-              className="inline-block"
-              style={{
-                background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              Pokémon
-            </motion.span>
-          </span>
-          <span className="block mt-2">
-            <motion.span
-              className="inline-block relative"
-              style={{
-                background: 'linear-gradient(135deg, #ef4444 0%, #f97316 25%, #fbbf24 50%, #a855f7 75%, #3b82f6 100%)',
-                backgroundSize: '200% auto',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-              animate={{
-                backgroundPosition: ['0% center', '200% center'],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: 'linear',
-              }}
-            >
-              Legends
-              {/* Underline effect */}
-              <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-1 rounded-full"
-                style={{
-                  background: 'linear-gradient(90deg, #ef4444, #fbbf24, #a855f7, #3b82f6)',
-                }}
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 1, delay: 1 }}
-              />
-            </motion.span>
-          </span>
+          <span className="block text-white">Pokémon</span>
+          <span className="block mt-2 pokemon-gradient-text">Legends</span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           Join the ultimate{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 font-semibold">
-            Pokémon community
-          </span>{' '}
+          <span className="text-yellow-400 font-semibold">Pokémon community</span>{' '}
           on Discord. Connect with trainers, share your journey, and become a legend!
         </motion.p>
 
@@ -246,72 +182,41 @@ export default function Hero() {
             href={DISCORD_INVITE}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-lg overflow-hidden"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold text-lg rounded-2xl transition-colors shadow-lg shadow-[#5865F2]/25"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {/* Button background */}
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-[#5865F2] to-[#7289DA]"
-              whileHover={{
-                background: 'linear-gradient(90deg, #7289DA, #5865F2)',
-              }}
-            />
-
-            {/* Shine effect */}
-            <motion.div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100"
-              style={{
-                background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
-              }}
-              animate={{
-                x: ['-100%', '100%'],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatDelay: 1,
-              }}
-            />
-
-            <span className="relative flex items-center gap-3">
-              <DiscordIcon className="w-6 h-6" />
-              Join Our Server
-            </span>
+            <DiscordIcon className="w-6 h-6" />
+            Join Our Server
           </motion.a>
 
           {/* Secondary CTA */}
           <motion.a
             href="#features"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-2xl font-bold text-lg border-2 border-white/20 hover:border-white/40 transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-bold text-lg rounded-2xl border border-white/20 transition-colors"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <span>Explore</span>
-            <motion.span
-              animate={{ x: [0, 5, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            >
-              →
-            </motion.span>
+            <span>→</span>
           </motion.a>
         </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          className="mt-16"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
         >
           <motion.div
-            className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center pt-2"
-            animate={{ y: [0, 10, 0] }}
+            className="w-6 h-10 rounded-full border-2 border-white/30 mx-auto flex justify-center pt-2"
+            animate={{ y: [0, 8, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             <motion.div
               className="w-1 h-2 rounded-full bg-white/50"
-              animate={{ y: [0, 8, 0], opacity: [1, 0, 1] }}
+              animate={{ opacity: [1, 0.3, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
           </motion.div>
