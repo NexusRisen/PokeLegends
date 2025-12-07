@@ -44,9 +44,9 @@ export default function Hero() {
   }, []);
 
   const stats = [
-    { label: 'Members', value: '10K+', color: 'from-red-500 to-orange-500' },
     { label: 'Online Now', value: onlineCount, color: 'from-green-500 to-emerald-500' },
     { label: 'Channels', value: '50+', color: 'from-yellow-500 to-amber-500' },
+    { label: 'Events', value: '24/7', color: 'from-red-500 to-orange-500' },
   ];
 
   return (
