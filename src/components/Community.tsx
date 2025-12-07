@@ -1,16 +1,10 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
-
-const serverFeatures = [
-  { icon: '🔥', label: '10,000+ Trainers', color: 'from-red-500 to-orange-500' },
-  { icon: '⚡', label: 'Active 24/7', color: 'from-yellow-400 to-amber-500' },
-  { icon: '🎮', label: 'Weekly Events', color: 'from-blue-400 to-cyan-500' },
-  { icon: '✨', label: 'Verified Server', color: 'from-purple-400 to-pink-500' },
-];
+const DISCORD_SERVER_ID = '1095036363348377623';
 
 // Pokeball SVG
 const PokeballIcon = ({ className }: { className?: string }) => (
@@ -26,6 +20,34 @@ const PokeballIcon = ({ className }: { className?: string }) => (
 export default function Community() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [memberCount, setMemberCount] = useState('10,000+');
+
+  useEffect(() => {
+    const fetchDiscordStats = async () => {
+      try {
+        const response = await fetch(
+          `https://discord.com/api/guilds/${DISCORD_SERVER_ID}/widget.json`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          if (data.presence_count) {
+            setMemberCount(`${data.presence_count.toLocaleString()}+`);
+          }
+        }
+      } catch (error) {
+        console.log('Using fallback member count');
+      }
+    };
+
+    fetchDiscordStats();
+  }, []);
+
+  const serverFeatures = [
+    { icon: '🔥', label: `${memberCount} Trainers`, color: 'from-red-500 to-orange-500' },
+    { icon: '⚡', label: 'Active 24/7', color: 'from-yellow-400 to-amber-500' },
+    { icon: '🎮', label: 'Weekly Events', color: 'from-blue-400 to-cyan-500' },
+    { icon: '✨', label: 'Verified Server', color: 'from-purple-400 to-pink-500' },
+  ];
 
   return (
     <section id="community" className="relative section-padding overflow-hidden" ref={ref}>

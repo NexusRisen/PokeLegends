@@ -1,14 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
 
 const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
-
-const stats = [
-  { label: 'Trainers', value: '10K+', color: 'from-red-500 to-orange-500' },
-  { label: 'Online Now', value: '500+', color: 'from-blue-500 to-cyan-500' },
-  { label: 'Channels', value: '50+', color: 'from-yellow-500 to-amber-500' },
-];
+const DISCORD_SERVER_ID = '1095036363348377623';
 
 // Pokeball SVG for decoration
 const PokeballIcon = ({ className }: { className?: string }) => (
@@ -22,6 +18,43 @@ const PokeballIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Hero() {
+  const [discordStats, setDiscordStats] = useState({
+    members: '10,000+',
+    online: '500+',
+    channels: '50+',
+  });
+
+  useEffect(() => {
+    const fetchDiscordStats = async () => {
+      try {
+        const response = await fetch(
+          `https://discord.com/api/guilds/${DISCORD_SERVER_ID}/widget.json`
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setDiscordStats({
+            members: data.presence_count ? `${data.presence_count.toLocaleString()}+` : '500+',
+            online: data.presence_count ? data.presence_count.toLocaleString() : '500+',
+            channels: data.channels?.length ? `${data.channels.length}+` : '50+',
+          });
+        }
+      } catch (error) {
+        console.log('Using fallback Discord stats');
+      }
+    };
+
+    fetchDiscordStats();
+    // Refresh stats every 5 minutes
+    const interval = setInterval(fetchDiscordStats, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const stats = [
+    { label: 'Trainers', value: discordStats.members, color: 'from-red-500 to-orange-500' },
+    { label: 'Online Now', value: discordStats.online, color: 'from-blue-500 to-cyan-500' },
+    { label: 'Channels', value: discordStats.channels, color: 'from-yellow-500 to-amber-500' },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Effects */}
@@ -86,7 +119,7 @@ export default function Hero() {
               </div>
               <div className="w-px h-5 bg-zinc-700" />
               <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500">
-                Join 10,000+ Trainers
+                Join {discordStats.members} Trainers
               </span>
             </div>
           </motion.div>
