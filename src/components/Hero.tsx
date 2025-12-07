@@ -132,12 +132,14 @@ export default function Hero() {
                 Pokemon Legend
               </span>
             </h1>
-            <motion.div
-              className="h-1 w-32 mx-auto rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500"
-              initial={{ width: 0 }}
-              animate={{ width: 128 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-            />
+            <div className="flex justify-center">
+              <motion.div
+                className="h-1 rounded-full bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500"
+                initial={{ width: 0 }}
+                animate={{ width: 128 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              />
+            </div>
           </motion.div>
 
           {/* Subtitle */}
