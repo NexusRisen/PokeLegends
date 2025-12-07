@@ -18,11 +18,7 @@ const PokeballIcon = ({ className }: { className?: string }) => (
 );
 
 export default function Hero() {
-  const [discordStats, setDiscordStats] = useState({
-    members: '10,000+',
-    online: '500+',
-    channels: '50+',
-  });
+  const [onlineCount, setOnlineCount] = useState('500+');
 
   useEffect(() => {
     const fetchDiscordStats = async () => {
@@ -32,11 +28,9 @@ export default function Hero() {
         );
         if (response.ok) {
           const data = await response.json();
-          setDiscordStats({
-            members: data.presence_count ? `${data.presence_count.toLocaleString()}+` : '500+',
-            online: data.presence_count ? data.presence_count.toLocaleString() : '500+',
-            channels: data.channels?.length ? `${data.channels.length}+` : '50+',
-          });
+          if (data.presence_count) {
+            setOnlineCount(data.presence_count.toLocaleString());
+          }
         }
       } catch (error) {
         console.log('Using fallback Discord stats');
@@ -44,15 +38,15 @@ export default function Hero() {
     };
 
     fetchDiscordStats();
-    // Refresh stats every 5 minutes
-    const interval = setInterval(fetchDiscordStats, 5 * 60 * 1000);
+    // Refresh stats every 2 minutes
+    const interval = setInterval(fetchDiscordStats, 2 * 60 * 1000);
     return () => clearInterval(interval);
   }, []);
 
   const stats = [
-    { label: 'Trainers', value: discordStats.members, color: 'from-red-500 to-orange-500' },
-    { label: 'Online Now', value: discordStats.online, color: 'from-blue-500 to-cyan-500' },
-    { label: 'Channels', value: discordStats.channels, color: 'from-yellow-500 to-amber-500' },
+    { label: 'Members', value: '10K+', color: 'from-red-500 to-orange-500' },
+    { label: 'Online Now', value: onlineCount, color: 'from-green-500 to-emerald-500' },
+    { label: 'Channels', value: '50+', color: 'from-yellow-500 to-amber-500' },
   ];
 
   return (
@@ -119,7 +113,7 @@ export default function Hero() {
               </div>
               <div className="w-px h-5 bg-zinc-700" />
               <span className="text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500">
-                Join {discordStats.members} Trainers
+                {onlineCount} Online Now
               </span>
             </div>
           </motion.div>

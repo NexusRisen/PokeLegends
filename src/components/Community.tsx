@@ -20,7 +20,7 @@ const PokeballIcon = ({ className }: { className?: string }) => (
 export default function Community() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [memberCount, setMemberCount] = useState('10,000+');
+  const [onlineCount, setOnlineCount] = useState('500+');
 
   useEffect(() => {
     const fetchDiscordStats = async () => {
@@ -31,11 +31,11 @@ export default function Community() {
         if (response.ok) {
           const data = await response.json();
           if (data.presence_count) {
-            setMemberCount(`${data.presence_count.toLocaleString()}+`);
+            setOnlineCount(data.presence_count.toLocaleString());
           }
         }
       } catch (error) {
-        console.log('Using fallback member count');
+        console.log('Using fallback online count');
       }
     };
 
@@ -43,7 +43,7 @@ export default function Community() {
   }, []);
 
   const serverFeatures = [
-    { icon: '🔥', label: `${memberCount} Trainers`, color: 'from-red-500 to-orange-500' },
+    { icon: '🟢', label: `${onlineCount} Online`, color: 'from-green-500 to-emerald-500' },
     { icon: '⚡', label: 'Active 24/7', color: 'from-yellow-400 to-amber-500' },
     { icon: '🎮', label: 'Weekly Events', color: 'from-blue-400 to-cyan-500' },
     { icon: '✨', label: 'Verified Server', color: 'from-purple-400 to-pink-500' },
