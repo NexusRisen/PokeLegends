@@ -1,11 +1,11 @@
 {
-  "name": "Pokémon Legends - The Ultimate Discord Community",
-  "short_name": "Pokémon Legends",
-  "description": "Join pokelegends.org - The most epic Pokémon community on Discord! Battle, trade, compete in tournaments, and become a Legend!",
+  "name": "Pokemon Legends - Discord Server & Pokemon Sysbots",
+  "short_name": "Pokemon Legends",
+  "description": "Join Pokemon Legends - The ultimate Pokemon Discord Server featuring Pokemon Sysbots, free genning services, trading, battles, and 10,000+ trainers!",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#020617",
-  "theme_color": "#a855f7",
+  "background_color": "#0a0a0f",
+  "theme_color": "#ee1515",
   "orientation": "portrait-primary",
   "icons": [
     {

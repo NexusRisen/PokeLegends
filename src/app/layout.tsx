@@ -4,24 +4,33 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://pokelegends.org'),
   title: {
-    default: "Pokemon Legends | The Ultimate Discord Community - pokelegends.org",
-    template: "%s | Pokemon Legends - pokelegends.org",
+    default: "Pokemon Legends | Discord Server & Pokemon Sysbots Community",
+    template: "%s | Pokemon Legends",
   },
-  description: "Join Pokemon Legends at pokelegends.org - The most epic Pokemon community on Discord! Connect with trainers, share your journey, participate in events, and become a Legend. Visit pokelegends.org today!",
+  description: "Join Pokemon Legends - The ultimate Pokemon Discord Server featuring Pokemon Sysbots, free genning services, trading, battles, and a community of 10,000+ trainers. Get your perfect Pokemon today!",
   keywords: [
     "Pokemon Legends",
     "Pokemon Discord",
+    "Pokemon Discord Server",
+    "Pokemon Sysbots",
+    "Pokemon Sysbot",
+    "Pokemon Genning",
+    "Free Pokemon Genning",
+    "Pokemon Trading Discord",
+    "Pokemon Bot Discord",
     "Pokemon Community",
-    "Pokemon Trading",
-    "Pokemon Battles",
-    "Pokemon Tournaments",
-    "Discord Gaming Community",
-    "Pokemon Server",
+    "Pokemon Scarlet Violet Discord",
+    "Pokemon SV Sysbot",
+    "Pokemon BDSP Sysbot",
+    "Pokemon Sword Shield Sysbot",
+    "Pokemon Legends Arceus",
     "Best Pokemon Discord",
-    "Pokemon Online",
-    "Catch Pokemon",
-    "Pokemon Games",
+    "Pokemon Server",
+    "Free Pokemon",
+    "Shiny Pokemon",
     "Legendary Pokemon",
+    "Pokemon Raids",
+    "Pokemon Tournaments",
     "pokelegends",
     "poke legends"
   ],
@@ -34,16 +43,16 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Pokemon Legends | The Ultimate Discord Community - pokelegends.org",
-    description: "Join the most epic Pokemon community on Discord. Connect with trainers, participate in events, and become a Legend!",
+    title: "Pokemon Legends | Discord Server & Pokemon Sysbots",
+    description: "Join 10,000+ trainers in the ultimate Pokemon Discord! Free Pokemon Sysbots, genning services, trading, battles, tournaments, and more!",
     url: "https://pokelegends.org",
-    siteName: "Pokemon Legends - pokelegends.org",
+    siteName: "Pokemon Legends",
     images: [
       {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Pokemon Legends - The Ultimate Discord Community - pokelegends.org",
+        url: "/logo.jpg",
+        width: 512,
+        height: 512,
+        alt: "Pokemon Legends - Discord Server & Pokemon Sysbots Community",
       },
     ],
     type: "website",
@@ -51,9 +60,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pokemon Legends | pokelegends.org",
-    description: "Join the most epic Pokemon Discord community. Connect with trainers, participate in events & become a Legend!",
-    images: ["/images/og-image.jpg"],
+    title: "Pokemon Legends | Discord Server & Pokemon Sysbots",
+    description: "Join 10,000+ trainers! Free Pokemon Sysbots, genning, trading & tournaments!",
+    images: ["/logo.jpg"],
     creator: "@pokemonlegends",
     site: "@pokemonlegends",
   },
@@ -87,7 +96,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="font-sans antialiased bg-slate-950 text-white overflow-x-hidden">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+      </head>
+      <body className="font-sans antialiased bg-[#0a0a0f] text-zinc-100 overflow-x-hidden">
         {children}
       </body>
     </html>

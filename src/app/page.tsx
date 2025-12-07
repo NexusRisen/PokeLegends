@@ -44,7 +44,7 @@ export default function Home() {
       <AnimatePresence>
         {showContent && (
           <motion.main
-            className="relative min-h-screen bg-slate-950"
+            className="relative min-h-screen"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -60,11 +60,6 @@ export default function Home() {
             <Features />
             <Community />
             <Footer />
-
-            {/* Background gradient overlay */}
-            <div className="fixed inset-0 pointer-events-none z-[-1]">
-              <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950" />
-            </div>
           </motion.main>
         )}
       </AnimatePresence>
