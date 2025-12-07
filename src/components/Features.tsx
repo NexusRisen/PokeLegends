@@ -177,7 +177,7 @@ export default function Features() {
                   </p>
 
                   {/* Bottom decoration */}
-                  <div className="mt-8 pt-5 border-t border-zinc-700/40 flex items-center justify-between">
+                  <div className="mt-8 pt-5 border-t border-zinc-700/40 flex items-center justify-center">
                     <div className="flex gap-1.5">
                       {[...Array(3)].map((_, i) => (
                         <div
@@ -187,12 +187,6 @@ export default function Features() {
                         />
                       ))}
                     </div>
-                    <motion.span
-                      className="text-sm text-zinc-500 group-hover:text-zinc-300 transition-colors font-medium"
-                      whileHover={{ x: 5 }}
-                    >
-                      Learn more →
-                    </motion.span>
                   </div>
                 </div>
               </div>
