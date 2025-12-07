@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 
-const DISCORD_INVITE = 'https://discord.gg/pokelegends';
+const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
 
 const stats = [
   { label: 'Trainers', value: '10K+', color: 'from-red-500 to-orange-500' },

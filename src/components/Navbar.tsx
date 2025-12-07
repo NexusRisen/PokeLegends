@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const DISCORD_INVITE = 'https://discord.gg/pokelegends';
+const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
 
 const navLinks = [
   { name: 'Features', href: '#features' },

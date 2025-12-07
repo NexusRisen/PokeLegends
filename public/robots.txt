@@ -16,5 +16,5 @@ Disallow: /api/
 
 # Pokemon Legends - The Ultimate Pokemon Discord Server
 # Features: Pokemon Sysbots, Free Genning, Trading, Battles, Tournaments
-# Join our Discord: https://discord.gg/pokelegends
+# Join our Discord: https://discord.com/invite/pokemonlegends
 # Visit us at: https://pokelegends.org

@@ -3,7 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-const DISCORD_INVITE = 'https://discord.gg/pokelegends';
+const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
 
 const serverFeatures = [
   { icon: '🔥', label: '10,000+ Trainers', color: 'from-red-500 to-orange-500' },

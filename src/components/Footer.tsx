@@ -1,6 +1,6 @@
 'use client';
 
-const DISCORD_INVITE = 'https://discord.gg/pokelegends';
+const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
 
 const footerLinks = [
   { name: 'Features', href: '#features' },
