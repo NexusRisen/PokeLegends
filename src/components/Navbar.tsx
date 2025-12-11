@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
+const DISCORD_INVITE = 'https://discord.gg/HbXGMCaX2d';
 
 const navLinks = [
   { name: 'Features', href: '#features' },
@@ -38,11 +38,11 @@ export default function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative w-10 h-10 rounded-xl overflow-hidden">
-            <img src="/logo.jpg" alt="Pokemon Legends" className="w-full h-full object-cover" />
+            <img src="/logo.jpg" alt="Pokemon Mythicals" className="w-full h-full object-cover" />
           </div>
           <div className="hidden sm:block">
-            <span className="text-lg font-bold text-white">Pokemon</span>
-            <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 ml-1">Legends</span>
+            <span className="text-lg font-bold text-white">Pokémon</span>
+            <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 ml-1">Mythicals</span>
           </div>
         </a>
 

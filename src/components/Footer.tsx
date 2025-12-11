@@ -1,6 +1,6 @@
 'use client';
 
-const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
+const DISCORD_INVITE = 'https://discord.gg/HbXGMCaX2d';
 
 const footerLinks = [
   { name: 'Features', href: '#features' },
@@ -20,11 +20,11 @@ export default function Footer() {
           <div className="md:col-span-2 text-left">
             <div className="flex items-center gap-3 mb-4 justify-start">
               <div className="relative w-10 h-10 rounded-xl overflow-hidden">
-                <img src="/logo.jpg" alt="Pokemon Legends" className="w-full h-full object-cover" />
+                <img src="/logo.jpg" alt="Pokemon Mythicals" className="w-full h-full object-cover" />
               </div>
               <div>
-                <span className="text-lg font-bold text-white">Pokemon</span>
-                <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 ml-1">Legends</span>
+                <span className="text-lg font-bold text-white">Pokémon</span>
+                <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 ml-1">Mythicals</span>
               </div>
             </div>
 
@@ -62,7 +62,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-zinc-600 text-sm">
-            {new Date().getFullYear()} Pokemon Legends. Fan-made community.
+            {new Date().getFullYear()} Pokémon Mythicals. Fan-made community.
           </p>
           <p className="text-zinc-700 text-xs">
             Pokemon is a trademark of Nintendo/Creatures Inc./GAME FREAK Inc.

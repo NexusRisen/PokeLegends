@@ -1,11 +1,11 @@
-# Robots.txt for pokelegends.org
-# Pokemon Legends - Discord Server & Pokemon Sysbots Community
+# Robots.txt for pokemythicals.org
+# Pokémon Mythicals - Discord Server & Pokemon Sysbots Community
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://pokelegends.org/sitemap.xml
+Sitemap: https://pokemythicals.org/sitemap.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1
@@ -14,7 +14,7 @@ Crawl-delay: 1
 User-agent: *
 Disallow: /api/
 
-# Pokemon Legends - The Ultimate Pokemon Discord Server
+# Pokémon Mythicals - The Ultimate Pokemon Discord Server
 # Features: Pokemon Sysbots, Free Genning, Trading, Battles, Tournaments
-# Join our Discord: https://discord.com/invite/pokemonlegends
-# Visit us at: https://pokelegends.org
+# Join our Discord: https://discord.gg/HbXGMCaX2d
+# Visit us at: https://pokemythicals.org

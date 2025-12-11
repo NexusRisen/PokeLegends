@@ -119,9 +119,9 @@ export default function Preloader({ onComplete }: { onComplete: () => void }) {
               transition={{ delay: 0.2 }}
               className="text-3xl font-black text-white mb-2"
             >
-              Pokemon{' '}
+              Pokémon{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500">
-                Legends
+                Mythicals
               </span>
             </motion.h1>
 

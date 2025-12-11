@@ -3,8 +3,8 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-const DISCORD_INVITE = 'https://discord.com/invite/pokemonlegends';
-const DISCORD_SERVER_ID = '1095036363348377623';
+const DISCORD_INVITE = 'https://discord.gg/HbXGMCaX2d';
+const DISCORD_SERVER_ID = '1447990954903470234';
 
 // Pokeball SVG for decoration
 const PokeballIcon = ({ className }: { className?: string }) => (
@@ -129,7 +129,7 @@ export default function Hero() {
               <span className="text-white">Become a</span>
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-yellow-400 to-blue-500 drop-shadow-lg">
-                Pokemon Legend
+                Pokémon Mythical
               </span>
             </h1>
             <div className="flex justify-center">

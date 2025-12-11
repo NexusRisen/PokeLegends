@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pokelegends.org'),
+  metadataBase: new URL('https://pokemythicals.org'),
   title: {
-    default: "Pokemon Legends | Discord Server & Pokemon Sysbots Community",
-    template: "%s | Pokemon Legends",
+    default: "Pokémon Mythicals | Discord Server & Pokemon Sysbots Community",
+    template: "%s | Pokémon Mythicals",
   },
-  description: "Join Pokemon Legends - The ultimate Pokemon Discord Server featuring Pokemon Sysbots, free genning services, trading, battles, and a community of 10,000+ trainers. Get your perfect Pokemon today!",
+  description: "Join Pokémon Mythicals - The ultimate Pokemon Discord Server featuring Pokemon Sysbots, free genning services, trading, battles, and a community of 10,000+ trainers. Get your perfect Pokemon today!",
   keywords: [
-    "Pokemon Legends",
+    "Pokemon Mythicals",
+    "Pokémon Mythicals",
     "Pokemon Discord",
     "Pokemon Discord Server",
     "Pokemon Sysbots",
@@ -31,28 +32,28 @@ export const metadata: Metadata = {
     "Legendary Pokemon",
     "Pokemon Raids",
     "Pokemon Tournaments",
-    "pokelegends",
-    "poke legends"
+    "pokemythicals",
+    "poke mythicals"
   ],
-  authors: [{ name: "Pokemon Legends", url: "https://pokelegends.org" }],
-  creator: "Pokemon Legends Community",
-  publisher: "pokelegends.org",
+  authors: [{ name: "Pokémon Mythicals", url: "https://pokemythicals.org" }],
+  creator: "Pokémon Mythicals Community",
+  publisher: "pokemythicals.org",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Pokemon Legends | Discord Server & Pokemon Sysbots",
+    title: "Pokémon Mythicals | Discord Server & Pokemon Sysbots",
     description: "Join 10,000+ trainers in the ultimate Pokemon Discord! Free Pokemon Sysbots, genning services, trading, battles, tournaments, and more!",
-    url: "https://pokelegends.org",
-    siteName: "Pokemon Legends",
+    url: "https://pokemythicals.org",
+    siteName: "Pokémon Mythicals",
     images: [
       {
-        url: "/logo.jpg",
-        width: 512,
-        height: 512,
-        alt: "Pokemon Legends - Discord Server & Pokemon Sysbots Community",
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pokémon Mythicals - Discord Server & Pokemon Sysbots Community",
       },
     ],
     type: "website",
@@ -60,11 +61,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pokemon Legends | Discord Server & Pokemon Sysbots",
+    title: "Pokémon Mythicals | Discord Server & Pokemon Sysbots",
     description: "Join 10,000+ trainers! Free Pokemon Sysbots, genning, trading & tournaments!",
-    images: ["/logo.jpg"],
-    creator: "@pokemonlegends",
-    site: "@pokemonlegends",
+    images: ["/og-image.jpg"],
+    creator: "@pokemonmythicals",
+    site: "@pokemonmythicals",
   },
   robots: {
     index: true,
@@ -84,7 +85,7 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://pokelegends.org",
+    canonical: "https://pokemythicals.org",
   },
   category: "gaming",
 };

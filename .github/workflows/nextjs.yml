@@ -1,4 +1,4 @@
-# Deploy Pokémon Legends Next.js site to GitHub Pages
+# Deploy Pokémon Mythicals Next.js site to GitHub Pages
 name: Deploy Next.js site to Pages
 
 on:

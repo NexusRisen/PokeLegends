@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="public/logo.jpg" alt="Pokémon Legends Logo" width="400"/>
+  <img src="public/logo.jpg" alt="Pokémon Mythicals Logo" width="400"/>
 </p>
 
-<h1 align="center">Pokémon Legends</h1>
+<h1 align="center">Pokémon Mythicals</h1>
 
 <p align="center">
   <strong>The Ultimate Pokémon Discord Community</strong>
 </p>
 
 <p align="center">
-  <a href="https://pokelegends.org">Website</a> •
-  <a href="https://discord.gg/pokemonlegends">Discord</a> •
-  <a href="https://twitter.com/pokemonlegends">Twitter</a>
+  <a href="https://pokemythicals.org">Website</a> •
+  <a href="https://discord.gg/HbXGMCaX2d">Discord</a> •
+  <a href="https://twitter.com/pokemonmythicals">Twitter</a>
 </p>
 
 <p align="center">
@@ -23,16 +23,16 @@
 
 ---
 
-## About Pokémon Legends
+## About Pokémon Mythicals
 
-**Pokémon Legends** is the most epic and immersive Pokémon community on Discord. We bring together trainers from around the world to battle, trade, compete, and form lasting friendships in the ultimate Pokémon experience.
+**Pokémon Mythicals** is the most epic and immersive Pokémon community on Discord. We bring together trainers from around the world to battle, trade, compete, and form lasting friendships in the ultimate Pokémon experience.
 
-Whether you're a seasoned champion or just starting your journey, Pokémon Legends offers something for everyone. Join **50,000+ trainers** and become a legend today!
+Whether you're a seasoned champion or just starting your journey, Pokémon Mythicals offers something for everyone. Join **50,000+ trainers** and become a mythical today!
 
-### Why Choose Pokémon Legends?
+### Why Choose Pokémon Mythicals?
 
 - **Epic Battles** - Engage in thrilling Pokémon battles with trainers worldwide
-- **Weekly Tournaments** - Compete for glory and climb the legendary leaderboards
+- **Weekly Tournaments** - Compete for glory and climb the mythical leaderboards
 - **Trading Hub** - Trade rare Pokémon and build your ultimate collection
 - **Mini Games** - Enjoy exclusive Pokémon-themed games and activities
 - **Pokédex Wiki** - Access comprehensive guides and strategies for every Pokémon
@@ -44,7 +44,7 @@ Whether you're a seasoned champion or just starting your journey, Pokémon Legen
 
 ## Website Features
 
-This repository contains the official **Pokémon Legends** website built with cutting-edge web technologies:
+This repository contains the official **Pokémon Mythicals** website built with cutting-edge web technologies:
 
 ### Tech Stack
 
@@ -102,25 +102,25 @@ npm start
 
 ## Join Our Community
 
-Ready to become a Pokémon Legend? Join our Discord server today!
+Ready to become a Pokémon Mythical? Join our Discord server today!
 
 <p align="center">
-  <a href="https://discord.gg/pokemonlegends">
+  <a href="https://discord.gg/HbXGMCaX2d">
     <img src="https://img.shields.io/badge/Join%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Join Discord"/>
   </a>
 </p>
 
 ### Connect With Us
 
-- **Website:** [pokelegends.org](https://pokelegends.org)
-- **Discord:** [discord.gg/pokemonlegends](https://discord.gg/pokemonlegends)
-- **Twitter:** [@pokemonlegends](https://twitter.com/pokemonlegends)
+- **Website:** [pokemythicals.org](https://pokemythicals.org)
+- **Discord:** [discord.gg/HbXGMCaX2d](https://discord.gg/HbXGMCaX2d)
+- **Twitter:** [@pokemonmythicals](https://twitter.com/pokemonmythicals)
 
 ---
 
 ## Contributing
 
-We welcome contributions from the community! If you'd like to help improve the Pokémon Legends website:
+We welcome contributions from the community! If you'd like to help improve the Pokémon Mythicals website:
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -147,9 +147,9 @@ Pokémon and all respective names are trademark & © of Nintendo/Creatures Inc./
 </p>
 
 <p align="center">
-  Made with ❤️ by the Pokémon Legends Team
+  Made with ❤️ by the Pokémon Mythicals Team
 </p>
 
 <p align="center">
-  <a href="https://pokelegends.org">pokelegends.org</a>
+  <a href="https://pokemythicals.org">pokemythicals.org</a>
 </p>
