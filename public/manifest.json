@@ -1,12 +1,11 @@
 {
-  "name": "Pokémon Mythicals - Discord Server & Pokemon Sysbots",
-  "short_name": "Pokémon Mythicals",
-  "description": "Join Pokémon Mythicals - The ultimate Pokemon Discord Server featuring Pokemon Sysbots, free genning services, trading, battles, and 10,000+ trainers!",
+  "name": "Pokémon Mythicals - Cosmic Pokemon Community",
+  "short_name": "PokéMythicals",
+  "description": "Join the most mystical Pokemon community in the cosmos",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0a0a0f",
-  "theme_color": "#ee1515",
-  "orientation": "portrait-primary",
+  "background_color": "#0a0a1a",
+  "theme_color": "#6b21a8",
   "icons": [
     {
       "src": "/logo.jpg",
@@ -19,9 +18,5 @@
       "type": "image/jpeg"
     }
   ],
-  "categories": ["games", "entertainment", "social"],
-  "lang": "en",
-  "dir": "ltr",
-  "scope": "/",
-  "prefer_related_applications": false
+  "categories": ["games", "entertainment", "social"]
 }

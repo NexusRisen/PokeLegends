@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-cosmic-void text-white font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    @apply bg-cosmic-purple/50 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-cosmic-deep;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-cosmic-purple to-cosmic-pink rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-cosmic-pink to-cosmic-purple;
+  }
+}
+
+@layer components {
+  /* Cosmic Text Gradient */
+  .cosmic-text {
+    @apply bg-gradient-to-r from-cosmic-purple via-cosmic-pink to-cosmic-cyan bg-clip-text text-transparent;
+  }
+
+  .cosmic-text-gold {
+    @apply bg-gradient-to-r from-cosmic-gold via-cosmic-pink to-cosmic-purple bg-clip-text text-transparent;
+  }
+
+  /* Glowing Text Effect */
+  .glow-text {
+    text-shadow:
+      0 0 10px rgba(139, 92, 246, 0.8),
+      0 0 20px rgba(236, 72, 153, 0.6),
+      0 0 30px rgba(34, 211, 238, 0.4),
+      0 0 40px rgba(139, 92, 246, 0.2);
+  }
+
+  .glow-text-subtle {
+    text-shadow:
+      0 0 10px rgba(139, 92, 246, 0.5),
+      0 0 20px rgba(236, 72, 153, 0.3);
+  }
+
+  /* Glass Panel Effect */
+  .glass-panel {
+    @apply bg-cosmic-deep/40 backdrop-blur-xl border border-cosmic-purple/30 rounded-2xl;
+    box-shadow:
+      inset 0 0 30px rgba(139, 92, 246, 0.1),
+      0 0 30px rgba(139, 92, 246, 0.2);
+  }
+
+  .glass-panel-dark {
+    @apply bg-cosmic-void/60 backdrop-blur-xl border border-cosmic-purple/20 rounded-2xl;
+  }
+
+  /* Cosmic Border Glow */
+  .cosmic-border {
+    @apply border border-cosmic-purple/40;
+    box-shadow:
+      0 0 15px rgba(139, 92, 246, 0.3),
+      inset 0 0 15px rgba(139, 92, 246, 0.1);
+  }
+
+  /* Constellation Star */
+  .constellation-star {
+    @apply relative;
+  }
+
+  .constellation-star::before {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  /* Portal Ring */
+  .portal-ring {
+    @apply absolute rounded-full border-2 border-cosmic-purple/50;
+    animation: spin 20s linear infinite;
+  }
+
+  /* Nebula Cloud */
+  .nebula-cloud {
+    @apply absolute rounded-full blur-3xl;
+    animation: nebulaDrift 30s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Animation Delays */
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-700 { animation-delay: 700ms; }
+  .animate-delay-1000 { animation-delay: 1000ms; }
+  .animate-delay-1500 { animation-delay: 1500ms; }
+  .animate-delay-2000 { animation-delay: 2000ms; }
+
+  /* Gradient Background */
+  .bg-cosmic-radial {
+    background: radial-gradient(ellipse at center, #1a1a3e 0%, #0d0d24 50%, #0a0a1a 100%);
+  }
+
+  /* Star Field Pattern */
+  .star-field {
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, white, transparent),
+      radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.8), transparent),
+      radial-gradient(2px 2px at 50px 160px, rgba(255,255,255,0.6), transparent),
+      radial-gradient(1px 1px at 90px 40px, white, transparent),
+      radial-gradient(1px 1px at 130px 80px, rgba(255,255,255,0.7), transparent),
+      radial-gradient(2px 2px at 160px 120px, white, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+  }
+
+  /* Hide scrollbar but allow scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text stroke for outlines */
+  .text-stroke {
+    -webkit-text-stroke: 1px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* GSAP Animation Classes */
+.gsap-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.gsap-scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.gsap-slide-right {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+.gsap-slide-left {
+  opacity: 0;
+  transform: translateX(50px);
+}
