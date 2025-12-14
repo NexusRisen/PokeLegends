@@ -42,9 +42,9 @@ onMounted(() => {
 })
 
 useSeoMeta({
-  title: 'Pokémon Mythicals | Cosmic Pokemon Community',
-  ogTitle: 'Pokémon Mythicals',
-  description: 'Join the most mystical Pokemon community in the cosmos. Active trading, tournaments, legendary encounters, and a welcoming community of trainers from across the universe.',
+  title: 'Pokémon Legends | Cosmic Pokemon Community',
+  ogTitle: 'Pokémon Legends',
+  description: 'Join the most legendary Pokemon community in the cosmos. Active trading, tournaments, legendary encounters, and a welcoming community of trainers from across the universe.',
   ogDescription: 'Enter the cosmic Pokemon universe',
   ogImage: '/og-image.jpg',
   twitterCard: 'summary_large_image'

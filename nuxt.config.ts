@@ -7,20 +7,20 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Pokémon Mythicals | Cosmic Pokemon Community',
+      title: 'Pokémon Legends | Cosmic Pokemon Community',
       htmlAttrs: { lang: 'en' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Join the most mystical Pokemon community in the cosmos. Active trading, tournaments, legendary encounters, and a welcoming community of trainers from across the universe.' },
-        { name: 'keywords', content: 'Pokemon, Discord, Pokemon Mythicals, Pokemon trading, Pokemon community, Sysbots, shiny Pokemon, legendary Pokemon' },
+        { name: 'description', content: 'Join the most legendary Pokemon community in the cosmos. Active trading, tournaments, legendary encounters, and a welcoming community of trainers from across the universe.' },
+        { name: 'keywords', content: 'Pokemon, Discord, Pokemon Legends, Pokemon trading, Pokemon community, Sysbots, shiny Pokemon, legendary Pokemon' },
         { property: 'og:type', content: 'website' },
-        { property: 'og:url', content: 'https://pokemythicals.org' },
-        { property: 'og:title', content: 'Pokémon Mythicals | Cosmic Pokemon Community' },
+        { property: 'og:url', content: 'https://pokelegends.org' },
+        { property: 'og:title', content: 'Pokémon Legends | Cosmic Pokemon Community' },
         { property: 'og:description', content: 'Enter the cosmic Pokemon universe. Join thousands of trainers in the ultimate Pokemon Discord community.' },
         { property: 'og:image', content: '/og-image.jpg' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Pokémon Mythicals' },
+        { name: 'twitter:title', content: 'Pokémon Legends' },
         { name: 'twitter:description', content: 'Enter the cosmic Pokemon universe' },
         { name: 'twitter:image', content: '/og-image.jpg' },
         { name: 'theme-color', content: '#6b21a8' },

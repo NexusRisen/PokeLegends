@@ -47,7 +47,7 @@ const scrollToSection = (href: string) => {
           <div class="relative w-10 h-10 sm:w-12 sm:h-12">
             <img
               src="/logo.jpg"
-              alt="Pokemon Mythicals"
+              alt="Pokemon Legends"
               class="w-full h-full rounded-full object-cover ring-2 ring-cosmic-purple/50 group-hover:ring-cosmic-pink transition-all duration-300"
             />
             <div class="absolute inset-0 rounded-full bg-cosmic-purple/20 animate-pulse-glow opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -57,7 +57,7 @@ const scrollToSection = (href: string) => {
               Pokémon
             </span>
             <span class="font-display text-lg sm:text-xl text-white font-bold ml-1">
-              Mythicals
+              Legends
             </span>
           </div>
         </a>

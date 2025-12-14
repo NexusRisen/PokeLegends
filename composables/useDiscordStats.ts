@@ -7,7 +7,7 @@ export function useDiscordStats() {
   const stats = ref<DiscordStats>({
     memberCount: 0,
     onlineCount: 0,
-    serverName: 'Pokémon Mythicals',
+    serverName: 'Pokémon Legends',
     isLoading: true,
     error: null
   })
@@ -29,7 +29,7 @@ export function useDiscordStats() {
 
       stats.value.memberCount = data.presence_count || 0
       stats.value.onlineCount = data.presence_count || 0
-      stats.value.serverName = data.name || 'Pokémon Mythicals'
+      stats.value.serverName = data.name || 'Pokémon Legends'
     } catch (error) {
       stats.value.error = error instanceof Error ? error.message : 'Unknown error'
       // Fallback values

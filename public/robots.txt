@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pokemythicals.org/sitemap.xml
+Sitemap: https://pokelegends.org/sitemap.xml
