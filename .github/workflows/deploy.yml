@@ -26,10 +26,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install --ignore-scripts
+
+      - name: Prepare Nuxt
+        run: npx nuxt prepare
 
       - name: Generate static site
         run: npm run generate
