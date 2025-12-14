@@ -36,7 +36,7 @@ const scrollToSection = (href: string) => {
             <div class="relative w-12 h-12">
               <img
                 src="/logo.jpg"
-                alt="Pokemon Legends"
+                alt="Pokemon Mythical"
                 class="w-full h-full rounded-full object-cover ring-2 ring-cosmic-purple/50"
               />
               <div class="absolute inset-0 rounded-full animate-pulse-glow opacity-30" />
@@ -46,7 +46,7 @@ const scrollToSection = (href: string) => {
                 Pokémon
               </span>
               <span class="font-display text-xl sm:text-2xl text-white font-bold ml-1">
-                Legends
+                Mythical
               </span>
             </div>
           </div>
@@ -96,7 +96,7 @@ const scrollToSection = (href: string) => {
       <!-- Bottom bar -->
       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
         <p class="text-white/40 text-xs sm:text-sm">
-          &copy; {{ currentYear }} Pokémon Legends. Not affiliated with Nintendo, The Pokémon Company, or Game Freak.
+          &copy; {{ currentYear }} Pokémon Mythical. Not affiliated with Nintendo, The Pokémon Company, or Game Freak.
         </p>
         <p class="text-white/40 text-xs sm:text-sm">
           <a
