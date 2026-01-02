@@ -794,4 +794,3 @@ useSeoMeta({
   .pokemon-sprite { width: 120px; height: 120px; }
 }
 </style>
-</script>
